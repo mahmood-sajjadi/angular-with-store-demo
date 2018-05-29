@@ -13,7 +13,7 @@ export function stateSetter(reducer: ActionReducer<any>): ActionReducer<any> {
     };
   }
   
-let _metaReducers: MetaReducer<{ price: PriceState; }, Action>[] = [];
+let _metaReducers: MetaReducer<any, Action>[] = [];
 if (environment.hmr) {
   _metaReducers.push(stateSetter);
 }

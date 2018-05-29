@@ -1,3 +1,15 @@
 <p>
-  step-two works!
+  <span>Is it after 5:00PM</span>
+  <app-yes-no (change)="isLate($event)"></app-yes-no>
 </p>
+<br/>
+<p>
+  <span>Is it dark?</span>
+  <app-yes-no (change)="isDark($event)"></app-yes-no>
+</p>
+<br/>
+<p>
+  <span>Is it cloudy</span>
+  <app-yes-no (change)="isCloudy($event)"></app-yes-no>
+</p>
+<button (click)="next()">next</button>

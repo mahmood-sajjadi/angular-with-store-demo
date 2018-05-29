@@ -1,3 +1,11 @@
 <p>
-  step-one works!
+  <span>are you a developer?</span>
+  <app-yes-no (change)="isDeveloper($event)"></app-yes-no>
 </p>
+<br/>
+<p>
+  <span>are you in ng-sydney?</span>
+  <app-yes-no (change)="inMeetup($event)"></app-yes-no>
+</p>
+<br/>
+<button (click)="next()">next</button>

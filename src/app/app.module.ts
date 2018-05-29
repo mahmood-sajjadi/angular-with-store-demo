@@ -8,31 +8,35 @@ import { StepThreeComponent } from './step-three/step-three.component';
 
 import { StoreModule, Store } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { priceReducer, initialPriceState, PriceState } from './reducer';
+import { priceReducer, stepReducer, initialPriceState, PriceState } from './reducer';
 import { metaReducers, SET_ROOT_STATE } from './reducer.hmr';
 import { take } from 'rxjs/operators';
 import { createNewHosts, createInputTransfer, removeNgStyles } from '@angularclass/hmr';
+import { YesNoComponent } from './yes-no/yes-no.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StepOneComponent,
     StepTwoComponent,
-    StepThreeComponent
+    StepThreeComponent,
+    YesNoComponent
   ],
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      price: priceReducer
+      price: priceReducer,
+      step: stepReducer,
     },
     {
       initialState: {
-        price: initialPriceState
+        price: initialPriceState,
+        step: 0,
       },
       metaReducers: metaReducers
     }),
     StoreDevtoolsModule.instrument({
-      maxAge: 10
+      maxAge: 20
     })
   ],
   providers: [],
