@@ -1,0 +1,4 @@
+<span class="wraper">
+  <span class="btn yes" [ngClass]="{active: isYes}" (click)="onChange(true)">YES</span>
+  <span class="btn no" [ngClass]="{active: !isYes}" (click)="onChange(false)">NO</span>
+</span>
